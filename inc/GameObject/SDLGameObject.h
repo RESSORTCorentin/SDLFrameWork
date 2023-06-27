@@ -1,9 +1,9 @@
 #ifndef H_SDLGAMEO
 #define H_SDLGAMEO
 
-#include "Vector2D.h"
+#include "../Pong/Vector2D.h"
 #include "GameObject.h"
-#include "LoadParams.h"
+#include "../GameGest/LoadParams.h"
 
 class SDLGameObject : public GameObject
 {

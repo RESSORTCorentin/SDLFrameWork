@@ -1,7 +1,7 @@
 #ifndef H_ENNEMY
 #define H_ENNEMY
 
-#include "SDLGameObject.h"
+#include "../GameObject/SDLGameObject.h"
 
 class Ennemy : public SDLGameObject
 {

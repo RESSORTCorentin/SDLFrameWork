@@ -1,6 +1,6 @@
-#include "SDLGameObject.h"
-#include "TextureManager.h"
-#include "Game.h"
+#include "../../inc/GameObject/SDLGameObject.h"
+#include "../../inc/GameGest/TextureManager.h"
+#include "../../inc/Pong/Game.h"
 
 SDLGameObject::SDLGameObject(LoadParams* pParams) : GameObject(pParams), m_position(pParams->getX(), pParams->getY()), m_velocity(0,0), m_accelaration(0,0)
 {

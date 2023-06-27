@@ -1,8 +1,8 @@
-#include "MenuButton.h"
-#include "Vector2D.h"
-#include "InputHandler.h"
-#include "PlayerState.h"
-#include "Game.h"
+#include "../../inc/Pong/MenuButton.h"
+#include "../../inc/Pong/Vector2D.h"
+#include "../../inc/GameGest/InputHandler.h"
+#include "../../inc/GameStates/PlayerState.h"
+#include "../../inc/Pong/Game.h"
 
 MenuButton::MenuButton(LoadParams* pParams, void (*callback)()) : SDLGameObject(pParams), m_callback(callback)
 {

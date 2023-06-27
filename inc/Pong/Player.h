@@ -1,7 +1,7 @@
 #ifndef H_PLAYER
 #define H_PLAYER
 
-#include "SDLGameObject.h"
+#include "../GameObject/SDLGameObject.h"
 
 class Player : public SDLGameObject
 {

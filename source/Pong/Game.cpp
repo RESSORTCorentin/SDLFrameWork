@@ -1,8 +1,8 @@
-#include "Game.h"
-#include "InputHandler.h"
-#include "MenuState.h"
-#include "PlayerState.h"
-#include "PauseState.h"
+#include "../../inc/Pong/Game.h"
+#include "../../inc/GameGest/InputHandler.h"
+#include "../../inc/GameStates/MenuState.h"
+#include "../../inc/GameStates/PlayerState.h"
+#include "../../inc/GameStates/PauseState.h"
 
 
 using namespace std;

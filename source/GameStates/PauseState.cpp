@@ -1,8 +1,8 @@
-#include "PauseState.h"
-#include "MenuState.h"
-#include "MenuButton.h"
-#include "InputHandler.h"
-#include "LoadParams.h"
+#include "../../inc/GameStates/PauseState.h"
+#include "../../inc/GameStates/MenuState.h"
+#include "../../inc/Pong/MenuButton.h"
+#include "../../inc/GameGest/InputHandler.h"
+#include "../../inc/GameGest/LoadParams.h"
 #include "Game.h"
 
 const  std::string PauseState::s_pauseID = "PAUSE";

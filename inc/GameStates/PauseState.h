@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include "GameState.h"
-#include "SDLGameObject.h"
+#include "../GameObject/SDLGameObject.h"
 
 class PauseState : public GameState
 {

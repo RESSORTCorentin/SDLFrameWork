@@ -1,6 +1,6 @@
-#include "Ennemy.h"
+#include "../../inc/Pong/Ennemy.h"
 #include "SDL2/SDL.h"
-#include "InputHandler.h"
+#include "../../inc/GameGest/InputHandler.h"
 
 Ennemy::Ennemy(LoadParams* pParams) : SDLGameObject(pParams)
 {

@@ -2,7 +2,7 @@
 #define H_GAMEOBJECT
 
 #include <iostream>
-#include "LoadParams.h"
+#include "../GameGest/LoadParams.h"
 
 class GameObject
 {

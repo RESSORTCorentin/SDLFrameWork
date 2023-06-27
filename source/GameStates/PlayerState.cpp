@@ -1,9 +1,9 @@
-#include "PlayerState.h"
-#include "TextureManager.h"
-#include "Game.h"
-#include "InputHandler.h"
-#include "PauseState.h"
-#include "Player.h"
+#include "../../inc/GameStates/PlayerState.h"
+#include "../../inc/GameGest/TextureManager.h"
+#include "../../inc/Pong/Game.h"
+#include "../../inc/GameGest/InputHandler.h"
+#include "../../inc/GameStates/PauseState.h"
+#include "../../inc/Pong/Player.h"
 #include <iostream>
 
 const   std::string PlayerState::s_PlayerID = "Player";

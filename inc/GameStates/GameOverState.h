@@ -2,7 +2,7 @@
 #define H_GAMEOVERSTATE
 
 #include "GameState.h"
-#include "SDLGameObject.h"
+#include "../GameObject/SDLGameObject.h"
 #include <vector>
 
 class GameOverState : public GameState

@@ -2,7 +2,7 @@
 #define H_MENUSTATE
 
 #include "GameState.h"
-#include "SDLGameObject.h"
+#include "../GameObject/SDLGameObject.h"
 #include <vector>
 
 class MenuState : public GameState

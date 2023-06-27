@@ -6,11 +6,11 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "TextureManager.h"
-#include "GameObject.h"
+#include "../GameGest/TextureManager.h"
+#include "../GameObject/GameObject.h"
+#include "../GameStates/GameStateMachine.h"
 #include "Player.h"
 #include "Ennemy.h"
-#include "GameStateMachine.h"
 
 enum    games_states
 {

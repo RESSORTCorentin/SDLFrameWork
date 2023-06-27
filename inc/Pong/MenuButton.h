@@ -1,7 +1,7 @@
 #ifndef H_MENUBUTTON
 #define H_MENUBUTTON
 
-#include "SDLGameObject.h"
+#include "../GameObject/SDLGameObject.h"
 #include <vector>
 
 

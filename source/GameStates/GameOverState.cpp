@@ -1,10 +1,10 @@
-#include "GameOverState.h"
-#include "TextureManager.h"
-#include "Game.h"
-#include "MenuButton.h"
-#include "LoadParams.h"
-#include "PlayerState.h"
-#include "MenuState.h"
+#include "../../inc/GameStates/GameOverState.h"
+#include "../../inc/GameGest/TextureManager.h"
+#include "../../inc/Pong/Game.h"
+#include "../../inc/Pong/MenuButton.h"
+#include "../../inc/GameGest/LoadParams.h"
+#include "../../inc/GameStates/PlayerState.h"
+#include "../../inc/GameStates/MenuState.h"
 
 std::string const   m_stateID = "GAMEOVER";
 

@@ -1,6 +1,6 @@
-#include "Player.h"
+#include "../../inc/Pong/Player.h"
 #include "SDL2/SDL.h"
-#include "InputHandler.h"
+#include "../../inc/GameGest/InputHandler.h"
 
 Player::Player(LoadParams* pParams) : SDLGameObject(pParams)
 {
