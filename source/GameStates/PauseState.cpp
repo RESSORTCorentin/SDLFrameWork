@@ -3,7 +3,7 @@
 #include "../../inc/Pong/MenuButton.h"
 #include "../../inc/GameGest/InputHandler.h"
 #include "../../inc/GameGest/LoadParams.h"
-#include "Game.h"
+#include "../../inc/Pong/Game.h"
 
 const  std::string PauseState::s_pauseID = "PAUSE";
 
@@ -65,8 +65,6 @@ bool    PauseState::onExit()
     m_gameObject.clear();
     TextureManager::Instance()->clearFromTextureMap("resume");
     TextureManager::Instance()->clearFromTextureMap("mainbutton");
-
-    InputHandler::GetInstance()->reset();
     std::cout << "Exiting PauseState" << std::endl;
     return (true);
 }

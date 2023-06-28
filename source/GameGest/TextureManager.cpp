@@ -1,4 +1,4 @@
-#include "TextureManager.h"
+#include "../../inc/GameGest/TextureManager.h"
 
 TextureManager* TextureManager::s_pInstance = nullptr;
 

@@ -6,7 +6,7 @@
 #include "../../inc/GameStates/PlayerState.h"
 #include "../../inc/GameStates/MenuState.h"
 
-std::string const   m_stateID = "GAMEOVER";
+const   std::string GameOverState::s_GameOverID = "GAMEOVER";
 
 void    GameOverState::update()
 {
@@ -27,12 +27,12 @@ void    GameOverState::render()
 
 bool    GameOverState::onEnter()
 {
-    if (!TextureManager::Instance()->load("assets/retry.png", "retry", Game::Instance()->getRenderer()))
+    if (!TextureManager::Instance()->load("../../assets/retry.png", "retry", Game::Instance()->getRenderer()))
     {
         return (false);
     }
 
-    if (!TextureManager::Instance()->load("assets/menu.png", "menu", Game::Instance()->getRenderer()))
+    if (!TextureManager::Instance()->load("../../assets/menu.png", "menu", Game::Instance()->getRenderer()))
     {
         return (false);
     }
@@ -59,12 +59,12 @@ bool    GameOverState::onExit()
     return (true);
 }
 
-void    GameOverState::s_goToplay()
+void    GameOverState::s_goToPlay()
 {
     Game::Instance()->getStateMachine()->changeState(new PlayerState());
 }
 
-void    GameOverState::s_gotToMenu()
+void    GameOverState::s_goToMenu()
 {
     Game::Instance()->getStateMachine()->changeState(new MenuState());
 }

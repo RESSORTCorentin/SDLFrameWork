@@ -8,8 +8,10 @@
 class GameOverState : public GameState
 {
 private:
-    static const std::string m_stateID;
+    static const std::string s_GameOverID;
     std::vector<SDLGameObject*> m_gameObject;
+    static  void    s_goToPlay();
+    static  void    s_goToMenu();
 public:
     virtual void    update();
     virtual void    render();
@@ -17,14 +19,10 @@ public:
     virtual bool    onEnter();
     virtual bool    onExit();
 
-    virtual std::string getStateID();
-
-
-    static  void    s_goToplay();
-    static  void    s_gotToMenu();
-    
-    GameOverState(/* args */);
-    ~GameOverState();
+    virtual std::string getStateID() const
+    {
+        return (s_GameOverID);
+    };
 };
 
 #endif

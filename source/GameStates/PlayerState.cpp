@@ -13,7 +13,7 @@ void PlayerState::update()
     std::cout << "entering PlayerState update" << std::endl;
     if (InputHandler::GetInstance()->isKeyDown(SDL_SCANCODE_ESCAPE))
     {
-        Game::Instance()->getStateMachine()->changeState(new PauseState());
+        Game::Instance()->getStateMachine()->pushState(new PauseState());
     }
     for (int i = 0; i < m_gameObject.size(); i++)
     {

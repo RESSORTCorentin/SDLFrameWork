@@ -1,9 +1,9 @@
 #include "../../inc/GameStates/MenuState.h"
 #include "../../inc/GameStates/PlayerState.h"
 #include "../../inc/GameStates/PauseState.h"
-#include "Game.h"
-#include "MenuButton.h"
-#include "InputHandler.h"
+#include "../../inc/Pong/Game.h"
+#include "../../inc/Pong/MenuButton.h"
+#include "../../inc/GameGest/InputHandler.h"
 
 const   std::string MenuState::s_menuID = "Menu";
 void MenuState::update()

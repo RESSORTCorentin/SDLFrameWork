@@ -18,7 +18,7 @@ int main()
 		{
 			frameStart = SDL_GetTicks();
 			
-			Game::Instance()->handleEvents();
+			Game::Instance()->handleEvent();
 			Game::Instance()->update();
 			Game::Instance()->render();
 
