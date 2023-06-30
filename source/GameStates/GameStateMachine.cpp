@@ -77,10 +77,6 @@ void    GameStateMachine::update()
         popStatePrivate();
         popStateFlag = false;
     }
-    for (int i = 0; i < m_gameStates.size(); i++)
-    {
-        std::cout << m_gameStates[i]->getStateID() << std::endl;
-    }
 }
 
 void    GameStateMachine::render()

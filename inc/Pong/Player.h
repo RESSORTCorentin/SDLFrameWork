@@ -6,10 +6,10 @@
 class Player : public SDLGameObject
 {
 private:
-    /* data */
+    int numPlay;
 public:
     Player(){};
-    Player(LoadParams* pParams);
+    Player(LoadParams* pParams, int numPlay);
     ~Player();
     void    draw();
     void    update();

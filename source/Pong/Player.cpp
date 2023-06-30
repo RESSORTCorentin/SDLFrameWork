@@ -2,7 +2,7 @@
 #include "SDL2/SDL.h"
 #include "../../inc/GameGest/InputHandler.h"
 
-Player::Player(LoadParams* pParams) : SDLGameObject(pParams)
+Player::Player(LoadParams* pParams,int numPlay) : SDLGameObject(pParams), numPlay(numPlay)
 {
 
 }
@@ -15,7 +15,6 @@ void    Player::draw()
 void    Player::update()
 {
 
-    m_currentFrame = 5;
     handleInput();
     
     SDLGameObject::update();
@@ -24,15 +23,39 @@ void    Player::update()
 
 void    Player::handleInput()
 {
-    if (InputHandler::GetInstance()->isKeyDown(SDL_SCANCODE_Q))
+    if (numPlay == 0)
     {
-        m_velocity.setX(1);
-    }
-    else
+        if (InputHandler::GetInstance()->isKeyDown(SDL_SCANCODE_Z) && m_position.getY() < 475)
+        {
+            m_velocity.setY(8);
+        }
+
+        else if (InputHandler::GetInstance()->isKeyDown(SDL_SCANCODE_S) && m_position.getY() > 1)
+        {
+            m_velocity.setY(-8);
+        }
+        else
+        {
+             m_velocity.setY(0);
+        }
+    }   
+    else if (numPlay == 1)
     {
-        m_velocity.setX(0);
-        m_velocity.setY(0);
-    }
+        if (InputHandler::GetInstance()->isKeyDown(SDL_SCANCODE_DOWN) && m_position.getY() < 475)
+        {
+            m_velocity.setY(8);
+        }
+
+        else if (InputHandler::GetInstance()->isKeyDown(SDL_SCANCODE_UP) && m_position.getY() > 1)
+        {
+            m_velocity.setY(-8);
+        }
+        else
+        {
+             m_velocity.setY(0);
+        }
+    }   
+   
 }
 
 void    Player::clean()
