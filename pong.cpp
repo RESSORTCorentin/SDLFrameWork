@@ -3,7 +3,7 @@
 
 // our Game object
 Game* g_game = 0;
-const int FPS = 60;
+const int FPS = 240;
 const int DELAY_TIME = 1000.0f / FPS;
 
 int main()

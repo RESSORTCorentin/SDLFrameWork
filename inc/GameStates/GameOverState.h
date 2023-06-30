@@ -12,6 +12,7 @@ private:
     std::vector<SDLGameObject*> m_gameObject;
     static  void    s_goToPlay();
     static  void    s_goToMenu();
+    ~GameOverState();
 public:
     virtual void    update();
     virtual void    render();

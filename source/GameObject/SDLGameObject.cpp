@@ -33,3 +33,22 @@ void    SDLGameObject::clean()
 {
 
 }
+
+float   SDLGameObject::getPosX()
+{
+    return(m_position.getX());
+}
+
+float   SDLGameObject::getPosY()
+{
+    return(m_position.getY());
+}
+
+float   SDLGameObject::getWidth()
+{
+    return(m_width);
+}
+float   SDLGameObject::getHeight()
+{
+    return(m_height);
+}

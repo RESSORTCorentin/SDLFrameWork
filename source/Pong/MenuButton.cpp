@@ -11,7 +11,7 @@ MenuButton::MenuButton(LoadParams* pParams, void (*callback)()) : SDLGameObject(
 
 void    MenuButton::draw()
 {
-    SDLGameObject::draw();
+    SDLGameObject::drawFrame();
 }
 
 void    MenuButton::update()

@@ -16,6 +16,10 @@ public:
     virtual void    update();
     virtual void    clean(); 
     virtual void    drawFrame();
+    virtual float   getPosX();
+    virtual float   getPosY();
+    virtual float   getWidth();
+    virtual float   getHeight();
 protected:
 
     SDLGameObject(){};

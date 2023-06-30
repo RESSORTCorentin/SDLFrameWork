@@ -22,7 +22,6 @@ enum    games_states
 class Game
 {
 public:
-        ~Game();
         void render();
         void update();
         void handleEvent();
@@ -44,6 +43,7 @@ public:
         SDL_Renderer* getRenderer();
 private:
         Game();
+        ~Game();
         SDL_Window* m_pWindow;
         SDL_Renderer* m_pRender;
 

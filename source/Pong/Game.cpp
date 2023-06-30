@@ -102,3 +102,8 @@ GameStateMachine*   Game::getStateMachine()
 {
     return (m_pGameStateMachine);
 }
+
+Game::~Game(){
+    delete s_pInstance;
+    delete m_pGameStateMachine;
+}

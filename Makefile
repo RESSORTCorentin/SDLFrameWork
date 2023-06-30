@@ -1,5 +1,5 @@
 CXX=g++
-CFLAGS= -Wall -Wextra -Werror
+CFLAGS= -Wall -Wextra -Werror -g
 EXEC= pong
 LDFLAGS = -lSDL2 -lSDL2_image
 

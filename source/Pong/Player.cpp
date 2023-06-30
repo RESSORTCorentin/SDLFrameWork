@@ -4,7 +4,7 @@
 
 Player::Player(LoadParams* pParams,int numPlay) : SDLGameObject(pParams), numPlay(numPlay)
 {
-
+    //m_accelaration.setY(-20);
 }
 
 void    Player::draw()
@@ -27,12 +27,12 @@ void    Player::handleInput()
     {
         if (InputHandler::GetInstance()->isKeyDown(SDL_SCANCODE_Z) && m_position.getY() < 475)
         {
-            m_velocity.setY(8);
+            m_velocity.setY(1);
         }
 
         else if (InputHandler::GetInstance()->isKeyDown(SDL_SCANCODE_S) && m_position.getY() > 1)
         {
-            m_velocity.setY(-8);
+            m_velocity.setY(-1);
         }
         else
         {
@@ -43,12 +43,12 @@ void    Player::handleInput()
     {
         if (InputHandler::GetInstance()->isKeyDown(SDL_SCANCODE_DOWN) && m_position.getY() < 475)
         {
-            m_velocity.setY(8);
+            m_velocity.setY(1);
         }
 
         else if (InputHandler::GetInstance()->isKeyDown(SDL_SCANCODE_UP) && m_position.getY() > 1)
         {
-            m_velocity.setY(-8);
+            m_velocity.setY(-1);
         }
         else
         {

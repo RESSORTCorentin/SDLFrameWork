@@ -12,7 +12,7 @@ const   std::string PlayerState::s_PlayerID = "Player";
 
 void PlayerState::update()
 {
-    std::cout << "entering PlayerState update" << std::endl;
+    //std::cout << "entering PlayerState update" << std::endl;
     if (InputHandler::GetInstance()->isKeyDown(SDL_SCANCODE_ESCAPE))
     {
         Game::Instance()->getStateMachine()->pushState(new PauseState());
@@ -20,6 +20,20 @@ void PlayerState::update()
     for (int i = 0; i < m_gameObject.size(); i++)
     {
         m_gameObject[i]->update();
+    }
+    if (checkColl( m_gameObject[1], m_gameObject[2]))
+    {
+        dynamic_cast<Ball*>(m_gameObject[1])->setSigneX(1);
+        std::cout << "bonjouyr" << std::endl;
+    }
+    if (checkColl( m_gameObject[1], m_gameObject[3]))
+    {
+        dynamic_cast<Ball*>(m_gameObject[1])->setSigneX(-1);
+        std::cout << "bonjouyr" << std::endl;
+    }
+    if (m_gameObject[1]->getPosX() <= 0 || m_gameObject[1]->getPosX() >= 800)
+    {
+        dynamic_cast<Ball*>(m_gameObject[1])->reset();
     }
 }
 
@@ -29,7 +43,7 @@ void    PlayerState::render()
     {
         m_gameObject[i]->draw();
     }
-    std::cout << "entering PlayerState render" << std::endl;
+    //std::cout << "entering PlayerState render" << std::endl;
 }
 
 bool    PlayerState::onEnter()
@@ -78,4 +92,40 @@ bool    PlayerState::onExit()
 std::string PlayerState::getStateID() const
 {
     return (s_PlayerID);
+}
+
+bool PlayerState::checkColl(SDLGameObject* p1, SDLGameObject* p2)
+{
+    float leftA, leftB;
+    float rightA, rightB;
+    float topA, topB;
+    float bottomA, bottomB;
+
+    leftA = p1->getPosX();
+    rightA = p1->getPosX() + p1->getWidth();
+    topA = p1->getPosY();
+    bottomA = p1->getPosY() + p1->getHeight();
+
+    leftB = p2->getPosX();
+    rightB = p2->getPosX() + p2->getWidth();
+    topB = p2->getPosY();
+    bottomB = p2->getPosY() + p2->getHeight();
+
+    if (bottomA <= topB)
+    {
+        return (false);
+    }
+    if (topA >= bottomB)
+    {
+        return (false);
+    }
+    if (leftA >= rightB)
+    {
+        return (false);
+    }
+    if (rightA <= leftB)
+    {
+        return (false);
+    }
+    return (true);
 }

@@ -12,6 +12,7 @@ class PlayerState : public GameState
 private:
     static  const   std::string s_PlayerID;
     std::vector<SDLGameObject*> m_gameObject;
+    bool    checkColl(SDLGameObject* p1, SDLGameObject* p2);
 public:
     virtual void    update();
     virtual void    render();
