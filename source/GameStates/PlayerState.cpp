@@ -6,6 +6,9 @@
 #include "../../inc/Pong/Player.h"
 #include "../../inc/Pong/Background.h"
 #include "../../inc/Pong/Ball.h"
+#include "../../inc/Pong/ScoreBoard.h"
+#include "../../inc/GameStates/GameOverState.h"
+
 #include <iostream>
 
 const   std::string PlayerState::s_PlayerID = "Player";
@@ -33,7 +36,21 @@ void PlayerState::update()
     }
     if (m_gameObject[1]->getPosX() <= 0 || m_gameObject[1]->getPosX() >= 800)
     {
+        if (m_gameObject[1]->getPosX() >= 800)
+        {
+            scoreA++;
+            dynamic_cast<ScoreBoard*>(m_gameObject[4])->setFrame(scoreA);
+        }
+        if (m_gameObject[1]->getPosX() <= 0)
+        {
+            scoreB++;
+            dynamic_cast<ScoreBoard*>(m_gameObject[5])->setFrame(scoreB);
+        }
         dynamic_cast<Ball*>(m_gameObject[1])->reset();
+    }
+    if (scoreA > 5|| scoreB > 5)
+    {
+        Game::Instance()->getStateMachine()->changeState(new GameOverState());
     }
 }
 
@@ -62,16 +79,25 @@ bool    PlayerState::onEnter()
     {
         return (false);
     }
+    if (!TextureManager::Instance()->load("assets/score.png","scoreboard", Game::Instance()->getRenderer()))
+    {
+        return (false);
+    }
 
     SDLGameObject* background = new Background(new LoadParams(0, 0, 799, 499, "fond"));
+    SDLGameObject* ScoreA = new ScoreBoard(new LoadParams(410, 30, 20, 30, "scoreboard"));
+    SDLGameObject* ScoreB = new ScoreBoard(new LoadParams(370, 30, 20, 30, "scoreboard"));
     SDLGameObject* ball = new Ball(new LoadParams(400, 250, 8, 8, "ball"));
     SDLGameObject* player1 = new Player(new LoadParams(10, 250, 2, 24, "player"), 0);
     SDLGameObject* player2 = new Player(new LoadParams(790, 250, 2, 24, "player"), 1);
-
     m_gameObject.push_back(background);
     m_gameObject.push_back(ball);
     m_gameObject.push_back(player1);
     m_gameObject.push_back(player2);
+    m_gameObject.push_back(ScoreA);
+    m_gameObject.push_back(ScoreB);
+    scoreA = 0;
+    scoreB = 0;
     std::cout << "entering PlayerState" << std::endl;
     return (true);
 }

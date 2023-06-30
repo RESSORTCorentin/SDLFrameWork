@@ -3,6 +3,7 @@
 #include "../../inc/GameStates/MenuState.h"
 #include "../../inc/GameStates/PlayerState.h"
 #include "../../inc/GameStates/PauseState.h"
+#include "../../inc/GameStates/GameOverState.h"
 
 
 using namespace std;

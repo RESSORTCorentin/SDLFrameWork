@@ -4,6 +4,7 @@
 #include "../../inc/Pong/Game.h"
 #include "../../inc/Pong/MenuButton.h"
 #include "../../inc/GameGest/InputHandler.h"
+#include "../../inc/Pong/Ball.h"
 
 const   std::string MenuState::s_menuID = "Menu";
 void MenuState::update()
@@ -38,12 +39,19 @@ bool    MenuState::onEnter()
         std::cout << "Failed to load Play\n" ;
         return (false);
     }
+    if (!TextureManager::Instance()->load("assets/ballpong.png","ball", Game::Instance()->getRenderer()))
+    {
+        return (false);
+    }
 
     SDLGameObject* button1 = new MenuButton(new LoadParams(100, 24, 100, 30, "playbutton"),s_menuToPlay);
     SDLGameObject* button2 = new MenuButton(new LoadParams(100, 70, 100, 30, "exitbutton"), s_exitFromMenu);
+    SDLGameObject* ball = new Ball(new LoadParams(100, 70, 8, 8, "ball"));
 
     m_gameObject.push_back(button1);
     m_gameObject.push_back(button2);
+    m_gameObject.push_back(ball);
+    
     std::cout << "entering MenuState" << std::endl;
     return (true);
 }

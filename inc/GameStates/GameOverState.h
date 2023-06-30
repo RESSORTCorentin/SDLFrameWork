@@ -10,8 +10,8 @@ class GameOverState : public GameState
 private:
     static const std::string s_GameOverID;
     std::vector<SDLGameObject*> m_gameObject;
-    static  void    s_goToPlay();
-    static  void    s_goToMenu();
+    static  void    s_GameOverToPlay();
+    static  void    s_GameOverToMenu();
     ~GameOverState();
 public:
     virtual void    update();

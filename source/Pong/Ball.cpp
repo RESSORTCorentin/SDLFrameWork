@@ -93,7 +93,7 @@ void Ball::update()
     SDLGameObject::update();
 }
 
-void Ball::render()
+void Ball::draw()
 {
     SDLGameObject::draw();
 }

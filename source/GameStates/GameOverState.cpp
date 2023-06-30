@@ -21,28 +21,29 @@ void    GameOverState::render()
  
     for (int i = 0; i < m_gameObject.size(); i++)
     {
-        m_gameObject[i]->draw();
+        m_gameObject[i]->drawFrame();
+        std::cout << "entering PlayerState" << std::endl;
     }
 }
 
 bool    GameOverState::onEnter()
 {
-    if (!TextureManager::Instance()->load("../../assets/retry.png", "retry", Game::Instance()->getRenderer()))
+    if (!TextureManager::Instance()->load("assets/retry.png", "retry", Game::Instance()->getRenderer()))
     {
         return (false);
     }
 
-    if (!TextureManager::Instance()->load("../../assets/menu.png", "menu", Game::Instance()->getRenderer()))
+    if (!TextureManager::Instance()->load("assets/menu.png", "menu", Game::Instance()->getRenderer()))
     {
         return (false);
     }
 
-    SDLGameObject* retry = new MenuButton(new LoadParams(100, 100, 100, 30, "retry"), s_goToPlay);
-    SDLGameObject* menu  = new MenuButton(new LoadParams(100, 150, 100, 30, "menu"), s_goToMenu);
+    SDLGameObject* retry = new MenuButton(new LoadParams(100, 100, 100, 30, "retry"), s_GameOverToPlay);
+    SDLGameObject* menu  = new MenuButton(new LoadParams(100, 150, 100, 30, "menu"), s_GameOverToMenu);
 
     m_gameObject.push_back(retry);
     m_gameObject.push_back(menu);
-
+    std::cout << "entering OverState"  << m_gameObject.size() << std::endl;
     return (true);
 }
 
@@ -59,12 +60,12 @@ bool    GameOverState::onExit()
     return (true);
 }
 
-void    GameOverState::s_goToPlay()
+void    GameOverState::s_GameOverToPlay()
 {
     Game::Instance()->getStateMachine()->changeState(new PlayerState());
 }
 
-void    GameOverState::s_goToMenu()
+void    GameOverState::s_GameOverToMenu()
 {
     Game::Instance()->getStateMachine()->changeState(new MenuState());
 }

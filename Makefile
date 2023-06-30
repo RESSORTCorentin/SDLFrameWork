@@ -19,6 +19,7 @@ SRC=	source/GameGest/InputHandler.cpp \
 		source/Pong/Vector2D.cpp\
 		source/Pong/Background.cpp \
 		source/Pong/Ball.cpp \
+		source/Pong/ScoreBoard.cpp \
 		pong.cpp
 
 SRC_H=	inc/GameGest/InputHandler.h \
@@ -36,6 +37,7 @@ SRC_H=	inc/GameGest/InputHandler.h \
 		inc/Pong/Player.h \
 		inc/Pong/Vector2D.h\
 		inc/Pong/Background.h \
+		inc/Pong/ScoreBoard.h \
 		inc/Pong/Ball.h
 
 OBJ = $(SRC:.cpp=.o)

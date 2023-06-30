@@ -21,7 +21,7 @@ private:
     float       getAngle(float adj, float hyp);
 public:
     virtual void update();
-    virtual void render();
+    virtual void draw();
     float   getDistX();
     float   getDistY();
     void   setDistY(float y);
